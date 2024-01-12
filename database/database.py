@@ -141,17 +141,3 @@ async def search_profile(user_id: int) -> list | bool:
         return list(res)
     else:
         return False
-
-#
-# async def check_user_in_watched(user_id, callback_user_id):
-#     cur = db.cursor()
-#     cur.execute(f'''
-#         SELECT 1 FROM users WHERE '{callback_user_id}' != ALL (
-#             ARRAY(
-#                 SELECT watched_users
-#                 FROM users
-#                 WHERE user_id = '{user_id}')
-#                 )
-#     ''')
-#     res = cur.fetchone()
-#     return res is not None
